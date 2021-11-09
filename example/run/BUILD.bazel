@@ -1,0 +1,27 @@
+load("//kubedog:defs.bzl", "kubedog_multitrack")
+load("@bazel_skylib//rules:write_file.bzl", "write_file")
+
+write_file(
+    name = "resources_spec",
+    out = "resources_spec.json",
+    content = [json.encode({
+        "StatefulSets": [
+            {
+                "ResourceName": "postgres",
+                "Namespace": "staging",
+            },
+        ],
+        "Deployments": [
+            {
+                "ResourceName": "app",
+                "Namespace": "staging",
+            },
+        ],
+    })],
+)
+
+kubedog_multitrack(
+    name = "multitrack",
+    timeout = 60,
+    resources_spec = ":resources_spec",
+)
