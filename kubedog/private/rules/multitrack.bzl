@@ -23,7 +23,7 @@ _ATTRS = {
 def _impl(ctx):
     cmd = ["cat", ctx.file.resources_spec.short_path, "|"]
 
-    cmd += [ctx.var["KUBEDOG_BIN"], "multitrack"]
+    cmd += [ctx.var["KUBEDOG_RUNFILES_BIN"], "multitrack"]
     cmd += ["--timeout", str(ctx.attr.timeout)]
     cmd += ["--logs-since", ctx.attr.logs_since]
 
