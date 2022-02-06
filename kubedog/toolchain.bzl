@@ -36,7 +36,7 @@ def _kubedog_toolchain_impl(ctx):
     template_variables = platform_common.TemplateVariableInfo({
         "KUBEDOG_BIN": target_tool_path,
         # Variable to use with disabled legacy_external_runfiles
-        "KUBEDOG_RUNFILES_BIN": target_tool_path.replace("external/", "../", 1)
+        "KUBEDOG_RUNFILES_BIN": target_tool_path.replace("external/", "../", 1),
     })
     default = DefaultInfo(
         files = depset(tool_files),

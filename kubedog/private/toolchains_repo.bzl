@@ -26,6 +26,12 @@ PLATFORMS = {
             "@platforms//cpu:x86_64",
         ],
     ),
+    "darwin-arm64": struct(
+        compatible_with = [
+            "@platforms//os:macos",
+            "@platforms//cpu:arm64",
+        ],
+    ),
     "linux-amd64": struct(
         compatible_with = [
             "@platforms//os:linux",

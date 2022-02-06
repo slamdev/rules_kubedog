@@ -15,8 +15,8 @@ load("//kubedog:repositories.bzl", "kubedog_register_toolchains", "rules_kubedog
 rules_kubedog_dependencies()
 
 kubedog_register_toolchains(
-    name = "kubedog0_6_1",
-    kubedog_version = "0.6.1",
+    name = "kubedog0_6_2",
+    kubedog_version = "0.6.2",
 )
 
 ############################################
