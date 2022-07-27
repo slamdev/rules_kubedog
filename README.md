@@ -13,7 +13,7 @@ http_archive(
     sha256 = "",
 )
 
-load("@slamdev_rules_kubedog//kubedog:deps.bzl", "kubedog_register_toolchains", "rules_kubedog_dependencies")
+load("@slamdev_rules_kubedog//kubedog:repositories.bzl", "kubedog_register_toolchains", "rules_kubedog_dependencies")
 
 rules_kubedog_dependencies()
 
